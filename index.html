@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV [Naam Student] - Grafische Vormgeving</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --kleur-primair: #B76BA3;      /* Vibrant Orchid */
+            --kleur-primair-licht: #F7D6E0; /* Blush Pink */
+            --kleur-accent-1: #F67280;     /* Vivid Coral Pink */
+            --kleur-achtergrond: #FFF7FA;  /* Soft Off-White Pink */
+            --kleur-tekst: #3D2C3C;        /* Deep Plum */
+            --kleur-wit: #ffffff;
+            --kleur-zijbalk: #FDEFF4;      /* Very Light Pink */
+            
+            /* Kleuren voor de achtergrond blobs, afgeleid van het palet */
+            --kleur-blob-1: #F7D6E0;       /* Blush Pink */
+            --kleur-blob-2: #FCE4EC;       /* Pale Pink */
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 1.5rem 0;
+            background-color: var(--kleur-achtergrond);
+            color: var(--kleur-tekst);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            font-size: 15px;
+        }
+        
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        body::before {
+            background-color: var(--kleur-blob-1);
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -150px;
+        }
+
+        body::after {
+            background-color: var(--kleur-blob-2);
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -120px;
+        }
+
+        .container {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 0 auto;
+            background-color: var(--kleur-wit);
+            box-shadow: 0 8px 25px rgba(90, 90, 90, 0.12);
+            display: flex;
+            flex-direction: column;
+            position: relative; 
+            z-index: 1;
+        }
+        
+        /* --- HEADER SECTIE --- */
+        .header {
+            background: linear-gradient(135deg, var(--kleur-primair-licht), var(--kleur-primair));
+            color: var(--kleur-wit);
+            padding: 0.8rem 5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-shrink: 0;
+            border-bottom: 0x solid var(--kleur-accent-1);
+            position: relative;
+        }
+
+        .header-titel {
+            position: absolute;
+            top: 0.8rem;
+            left: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 1000;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 0;
+        }
+
+        .header-info {
+            flex-grow: 1;
+            margin-left: 4rem;
+            margin-top: auto;
+            padding-bottom: 0.5rem;
+        }
+        
+        h1, h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .header-info h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: var(--kleur-wit);
+            text-shadow: none;
+            position: absolute;
+            bottom: 0.8rem;
+            left: 4rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .profiel-foto {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--kleur-wit);
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(203, 65, 152, 0.15);
+        }
+
+        /* --- HOOFDINHOUD (TWEE KOLOMMEN) --- */
+        .hoofd-inhoud {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .linker-kolom {
+            flex: 1;
+            min-width: 230px;
+            background-color: var(--kleur-zijbalk);
+            padding: 2.2rem;
+        }
+
+        .rechter-kolom {
+            flex: 2.5;
+            padding: 2.2rem;
+        }
+
+        .sectie {
+            margin-bottom: 1.6rem;
+        }
+        
+        .rechter-kolom h2 {
+            color: var(--kleur-primair);
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: none;
+            position: relative;
+        }
+
+        .linker-kolom h2 {
+             color: #9FB1B9; /* Donkerdere tint van de hoofdkleur */
+             font-size: 1.5rem;
+             margin-top: 0;
+             margin-bottom: 0.8rem;
+             position: relative;
+             padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--kleur-accent-1);
+            border-radius: 2px;
+        }
+        
+        .linker-kolom h2::after {
+            background-color: #D3DCE0; /* Subtiele lijn in de zijkolom */
+        }
+
+        p {
+            margin: 0 0 0.8rem 0;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 0;
+        }
+        
+        .contact-info p {
+            margin: 0 0 0.5rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: var(--kleur-primair);
+        }
+
+        .contact-info svg {
+            width: 15px;
+            height: 15px;
+            margin-right: 0.8rem;
+            fill: var(--kleur-primair);
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: var(--kleur-tekst);
+            margin: 0 0 0.1rem 0;
+        }
+
+        .item-meta {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .werk-item, .opleiding-item {
+            margin-bottom: 1.5rem;
+        }
+        .werk-item:last-child, .opleiding-item:last-child { margin-bottom: 0; }
+        
+        .vaardigheden-lijst li {
+            margin-bottom: 0.8rem;
+        }
+
+        .vaardigheden-lijst strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+        
+        .vaardigheden-sublijst {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .vaardigheden-sublijst li {
+            padding-left: 1.2rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+            line-height: 1.5;
+        }
+
+        .vaardigheden-sublijst li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--kleur-primair);
+            font-weight: 600;
+        }
+
+        .talen-lijst li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- PRINT STIJLEN --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background-color: var(--kleur-wit);
+                padding: 0;
+                margin: 0;
+                font-size: 10pt;
+            }
+            
+            body::before, body::after { display: none; }
+
+            .container {
+                width: 100%;
+                min-height: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                padding: 1.5rem;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .header-info {
+                margin-left: 0;
+            }
+
+            h1 { font-size: 24pt; }
+            h2 { font-size: 16pt; color: #000 !important; }
+
+            .sectie { page-break-inside: avoid; }
+            
+            h2::after { background-color: #000 !important; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-titel">CV</div>
+            <div class="header-info">
+                <h1 style="margin-bottom:0.3rem;">Giselle Salomé</h1>
+                <span style="display:block; font-size:1.1rem; font-family:'Raleway',sans-serif; font-weight:400; font-style:italic; color:rgba(255,255,255,0.92); margin-top:0rem; margin-left:1.2rem; letter-spacing:0.5px;">grafisch vormgever</span>
+            </div>
+            <img src="resume_shot.jpg" alt="Profielfoto van Giselle Salomé" class="profiel-foto">
+        </header>
+
+        <main class="hoofd-inhoud">
+            <div class="linker-kolom">
+                <section class="sectie" id="contact">
+                    <h2>Contact</h2>
+                    <div class="contact-info">
+                        <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25A.75.75 0 0 1 5.5 7.5l6.5 4.07 6.5-4.07a.75.75 0 0 1 1.1 1.25z"/></svg><a href="mailto:g.salome@email.com">g.salome@email.com</a></p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.75-.25 1.02l-2.2 2.2z"/></svg><a href="tel:0612345678">06-12345678</a></p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Voorbeeldstraat 123, 3512 AB Utrecht</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-7 2h-1.5v2.25H9v1.5h1.5V11h1.5V9.5H13.5v-1.5H12V5M6.5 8.25H8v5.5H6.5v-5.5m9 0H17v5.5h-1.5v-5.5Z"/></svg><a href="https://linkedin.com/in/gisellesalome" target="_blank">linkedin.com/in/gisellesalome</a></p>
+                    </div>
+                </section>
+                <section class="sectie" id="vaardigheden">
+                    <h2>Vaardigheden</h2>
+                    <ul class="vaardigheden-lijst">
+                        <li>
+                            <strong>Software</strong>
+                            <ul class="vaardigheden-sublijst">
+                                <li>Adobe InDesign (expert)</li>
+                                <li>Adobe Illustrator (gevorderd)</li>
+                                <li>Adobe Photoshop (basis)</li>
+                                <li>Figma (basis)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Ontwerp en concept</strong>
+                            <ul class="vaardigheden-sublijst">
+                                <li>Branding</li>
+                                <li>Huisstijlen en divers drukwerk</li>
+                                <li>Conceptontwikkeling en visual storytelling</li>
+                                <li>Fotografie</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Competenties</strong>
+                            <ul class="vaardigheden-sublijst">
+                                <li>Creatief en oplossingsgericht</li>
+                                <li>Communicatief en klantgericht</li>
+                                <li>Leergierig en proactief</li>
+                                <li>Teamgericht en zelfstandig</li>
+                                <li>Nauwkeurig en deadlinegericht</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section class="sectie" id="talen">
+                    <h2>Talen</h2>
+                    <ul class="talen-lijst">
+                        <li>Nederlands (moedertaal)</li>
+                        <li>Engels (vloeiend)</li>
+                        <li>Spaans (basis)</li>
+                    </ul>
+                </section>
+                <section class="sectie" id="portfolio">
+                    <h2>Portfolio</h2>
+                    <p>Mijn volledige portfolio met recent werk is online te bekijken op: <a href="https://gisellesalome.design" target="_blank" style="color:var(--kleur-primair); font-weight:500;">gisellesalome.design</a></p>
+                </section>
+            </div>
+
+            <div class="rechter-kolom">
+                <section class="sectie" id="profiel">
+                    <h2>Profiel</h2>
+                    <p>Enthousiaste en ambitieuze mbo-student grafische vormgeving, met een sterke focus op branding en visuele communicatie. Vaardig met de Adobe Creative Suite en gemotiveerd om nieuwe technieken te leren. Ik zoek een uitdagende stage of bijbaan waar ik mijn creativiteit kan inzetten en waardevolle ervaringen kan opdoen.</p>
+                </section>
+                <section class="sectie" id="werkervaring">
+                    <h2>Werkervaring</h2>
+                    <div class="werk-item">
+                        <h3>Freelance Grafisch vormgever</h3>
+                        <span class="item-meta">Parttime | 2022 - heden</span>
+                        <p>Ontwerpen van logo's, flyers en social media content voor bekenden en diverse lokale ondernemers. Verantwoordelijk voor het gehele traject, van concept tot eindproduct.</p>
+                    </div>
+                    <div class="werk-item">
+                        <h3>Verkoopmedewerker boekhandel</h3>
+                        <span class="item-meta">De Leeshoek, Utrecht | 2021 - 2023</span>
+                        <p>Klanten adviseren en kassawerkzaamheden. Ook mocht ik meehelpen bij het inrichten van de etalages.</p>
+                    </div>
+                </section>
+                <section class="sectie" id="opleiding">
+                    <h2>Opleiding</h2>
+                    <div class="opleiding-item">
+                        <h3>Mbo Grafische vormgeving (niveau 4)</h3>
+                        <span class="item-meta">Grafisch Lyceum Utrecht | 2023 - heden</span>
+                        <p>Keuzedelen: Brand design en Packaging design.</p>
+                    </div>
+                    <div class="opleiding-item">
+                        <h3>Vmbo Theoretische Leerweg</h3>
+                        <span class="item-meta">College de Klop, Utrecht | 2017 - 2023/span>
+                        <p>Eindexamenpakket met tekenen en kunst.</p>
+                    </div>
+                </section>
+                <section class="sectie" id="nevenactiviteiten">
+                    <h2>Nevenactiviteiten</h2>
+                    <div class="werk-item">
+                        <h3>Vrijwilliger communicatie</h3>
+                        <span class="item-meta">Amnesty International | 2024 - heden</span>
+                        <p>Ontwerpen van promotiemateriaal (flyers, social media posts) voor lokale bewustwordingscampagnes en evenementen.</p>
+                    </div>
+                    <div class="werk-item">
+                        <h3>Zwemcoach</h3>
+                        <span class="item-meta">Zwemclub de Waterrakkers | 2022 - heden</span>
+                        <p>Coachen en begeleiden van jeugdleden. Verantwoordelijk voor trainingsschema's en het bevorderen van een positieve en veilige sportomgeving.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
