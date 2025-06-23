@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sollicitatiebrief Giselle Salomé - Grafische Vormgeving</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --kleur-primair: #B76BA3;      /* Vibrant Orchid */
+            --kleur-primair-licht: #F7D6E0; /* Blush Pink */
+            --kleur-accent-1: #F67280;     /* Vivid Coral Pink */
+            --kleur-achtergrond: #FFF7FA;  /* Soft Off-White Pink */
+            --kleur-tekst: #3D2C3C;        /* Deep Plum */
+            --kleur-wit: #ffffff;
+            --kleur-zijbalk: #FDEFF4;      /* Very Light Pink */
+            
+            --kleur-blob-1: #F7D6E0;       /* Blush Pink */
+            --kleur-blob-2: #FCE4EC;       /* Pale Pink */
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 1.5rem 0;
+            background-color: var(--kleur-achtergrond);
+            color: var(--kleur-tekst);
+            line-height: 1.7;
+            position: relative;
+            overflow-x: hidden;
+            font-size: 15px;
+        }
+        
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        body::before {
+            background-color: var(--kleur-blob-1);
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -150px;
+        }
+
+        body::after {
+            background-color: var(--kleur-blob-2);
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -120px;
+        }
+
+        .container {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 0 auto;
+            background-color: var(--kleur-wit);
+            box-shadow: 0 8px 25px rgba(90, 90, 90, 0.12);
+            display: flex;
+            flex-direction: column;
+            position: relative; 
+            z-index: 1;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--kleur-primair-licht), var(--kleur-primair));
+            color: var(--kleur-wit);
+            padding: 1.5rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            margin: 0;
+            font-size: 2.2rem;
+            text-shadow: none;
+        }
+        
+        .header .titel {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 3rem 4rem;
+            flex-grow: 1;
+        }
+
+        .adres-sectie {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .adres-sectie > div {
+            width: 40%;
+        }
+        
+        .adres-sectie p, .brief-hoofd p {
+            margin: 0;
+        }
+        
+        .adres-sectie strong {
+            font-weight: 500;
+            color: var(--kleur-primair);
+        }
+
+        .brief-hoofd {
+            margin-bottom: 2.5rem;
+        }
+        
+        .brief-hoofd .onderwerp {
+            font-weight: 500;
+            margin-top: 1.5rem;
+            color: var(--kleur-tekst);
+        }
+        
+        .brief-body p {
+            margin: 0 0 1.2rem 0;
+            text-align: justify;
+        }
+
+        .afsluiting {
+            margin-top: 2rem;
+        }
+
+        a {
+            color: var(--kleur-primair);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body { background-color: var(--kleur-wit); padding: 0; margin: 0; font-size: 10pt; }
+            body::before, body::after { display: none; }
+            .container { width: 100%; min-height: 0; margin: 0; box-shadow: none; }
+            .header { padding: 1.5rem; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            main { padding: 2cm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <span class="titel">Sollicitatiebrief</span>
+            <h1>Giselle Salomé</h1>
+        </header>
+
+        <main>
+            <section class="adres-sectie">
+                <div class="afzender">
+                    <p><strong>Giselle Salomé</strong></p>
+                    <p>Voorbeeldstraat 123</p>
+                    <p>3512 AB Utrecht</p>
+                    <p>g.salome@email.com</p>
+                    <p>06-12345678</p>
+                </div>
+                <div class="geadresseerde">
+                    <p><strong>Emogy B.V.</strong></p>
+                    <p>T.a.v. de afdeling personeelszaken</p>
+                    <p>Buys Ballotstraat 5</p>
+                    <p>1704 SK Heerhugowaard</p>
+                </div>
+            </section>
+
+            <section class="brief-hoofd">
+                <p class="datum">Utrecht, 24 mei 2024</p>
+                <p class="onderwerp">Betreft: Sollicitatie stageplaats grafische vormgeving</p>
+            </section>
+            
+            <section class="brief-body">
+                <p>Geachte heer/mevrouw,</p>
+
+                <p>Via uw website kwam ik de vacature tegen voor een stage grafische vormgeving bij Emogy. Graag solliciteer ik naar deze plek.</p>
+
+                <p>Als derdejaars student grafische vormgeving aan het Grafisch Lyceum Utrecht ben ik op zoek naar een stage waarin ik mijn ontwerpvaardigheden kan inzetten binnen een professionele,  ingestelde omgeving. De stageperiode die ik zoek loopt van 26 januari tot en met eind juli 2026.</p>
+
+                <p>Ik ben leergierig, zelfstandig en werk doelgericht. Bij visueel ontwerp draait het voor mij om duidelijke communicatie: een boodschap moet overtuigend overkomen en de juiste doelgroep aanspreken. Mijn kracht ligt in het combineren van creatieve ideeën met een scherpe blik op vorm, typografie en gebruiksvriendelijkheid. Daarbij werk ik nauwkeurig en denk ik actief mee over inhoud en aanpak.</p>
+
+                <p>Tijdens mijn opleiding heb ik gewerkt aan uiteenlopende projecten, van verpakkingen tot huisstijlen en magazines. Vooral met InDesign en Illustrator werk ik soepel en efficiënt. In mijn online portfolio (<a href="https://www.gisellesalome.design" target="_blank">www.gisellesalome.design</a>) vindt u een selectie van mijn werk, waarin zowel concept als uitwerking goed tot hun recht komen.</p>
+
+                <p>Ook buiten mijn studie heb ik relevante ervaring opgedaan. Als freelance vormgever heb ik verschillende opdrachten zelfstandig uitgevoerd, van briefing en planning tot ontwerp en oplevering. Daarnaast heb ik promotiemateriaal ontworpen voor Amnesty International. Deze projecten hebben mij geholpen mijn communicatie met opdrachtgevers te versterken en mijn ontwerpen beter af te stemmen op specifieke doelgroepen.</p>
+
+                <p>Wat mij aanspreekt aan Emogy is de focus op B2B en de manier waarop ontwerp wordt ingezet om zakelijke doelstellingen te ondersteunen. De werkzaamheden die jullie bieden, zoals het ontwikkelen van huisstijlen, brochures en content voor social media, sluiten goed aan bij mijn ervaring en ambitie. Ik werk graag binnen duidelijke kaders en denk mee over hoe een ontwerp zowel visueel sterk als functioneel kan zijn.</p>
+
+                <p>Ik hoop dat mijn brief en portfolio een goed beeld geven van mijn motivatie en vaardigheden. Graag licht ik mijn werk en enthousiasme verder toe in een persoonlijk gesprek.</p>
+            </section>
+
+            <section class="afsluiting">
+                <p>Met vriendelijke groet,</p>
+                <p>Giselle Salomé</p>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
